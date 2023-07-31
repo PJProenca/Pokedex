@@ -1,0 +1,29 @@
+.stat_img {
+  width: 50%;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+
+.stat_text {
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 10pt;
+  color: black;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.stat_values {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.stats_bg {
+  background-size: cover;
+}
+.no-data-found {
+  width: 250px;
+  height: 250px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: x-large;
+}

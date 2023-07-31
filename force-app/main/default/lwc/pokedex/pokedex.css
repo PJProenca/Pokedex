@@ -1,0 +1,43 @@
+/* Inside your CSS file or style tag in the component */
+.navbar-container {
+  position: sticky;
+  top: 5.63rem;
+  background-color: ivory; /* Adjust background color as needed */
+  z-index: 1; /* Set z-index to ensure it stays on top of other elements */
+  border-radius: 0 0 0.25rem 0.25rem;
+  margin-top: -1.3rem;
+  box-shadow: 8px 8px 15px;
+}
+
+.navbar-content {
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  grid-template-rows: auto auto;
+}
+
+.not_found_div {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 4vw;
+}
+
+.error-img {
+  width: 25%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+}
+
+@font-face {
+  font-family: "Pokemon Solid Font";
+  src: url("/resource/PokemonFont/Pokemon-Solid.ttf") format("TrueType");
+}
+
+.poke-font {
+  font-family: "Pokemon Solid Font";
+  font-size: 20pt;
+  color: darkred;
+  text-shadow: 2px 2px black;
+}

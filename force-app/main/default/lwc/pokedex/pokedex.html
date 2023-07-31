@@ -1,0 +1,86 @@
+<template>
+  <div>
+    <div class="navbar-container">
+      <div class="navbar-content">
+        <div
+          class="slds-size_full slds-grid slds-gutters_medium slds-grid_vertical-align-start slds-m-bottom_x-small"
+        >
+          <div class="slds-col slds-size_2-of-12 slds-var-m-horizontal_medium">
+            <lightning-combobox
+              label="Generation"
+              value={selectedGeneration}
+              placeholder="Select a Generation"
+              options={generationOptions}
+              onchange={handleGenerationChange}
+            >
+            </lightning-combobox>
+          </div>
+
+          <div class="slds-col slds-size_2-of-12 slds-var-m-horizontal_medium">
+            <c-multi-select-combobox
+              label="Types"
+              name="options"
+              options={typeOptions}
+              onchange={handleTypeChange}
+              show-pills
+            ></c-multi-select-combobox>
+          </div>
+
+          <div class="slds-col slds-size_4-of-12 slds-var-m-horizontal_medium">
+            <lightning-input
+              type="Search"
+              class="slds-var-m-bottom_small"
+              label="Search"
+              value={searcherm}
+              onchange={handleSearchChange}
+            >
+            </lightning-input>
+          </div>
+        </div>
+        <div>
+          <p class="poke-font">Number of pokemons: {numberOfPokemons}</p>
+        </div>
+      </div>
+    </div>
+    <div class="slds-card__body slds-card__body_inner">
+      <div if:true={spinner}>
+        <lightning-spinner
+          alternative-text="Loading"
+          size="medium"
+        ></lightning-spinner>
+      </div>
+      <template if:true={pokemonsFilter}>
+        <lightning-layout multiple-rows="true" pull-to-boundary="small">
+          <template for:each={pokemonsFilter} for:item="pokemon">
+            <lightning-layout-item
+              key={pokemon.Id}
+              size="2"
+              class="slds-var-p-around_large slds-var-m-top_xx-large slds-large-size_2-of-12 slds-medium-size_4-of-12 slds-small-size_6-of-12"
+            >
+              <c-pokemon-tile
+                pokemon={pokemon}
+                onpokemonview={handleNavigationChange}
+              ></c-pokemon-tile>
+            </lightning-layout-item>
+          </template>
+        </lightning-layout>
+        <!--* not pokemons found -->
+        <template if:false={existsPokemons}>
+          <div class="not_found_div">
+            <div>
+              <img src={sad_pikachu} class="error-img" alt="" />
+              <p>Sorry, we couldn't find any Pókemon!!</p>
+            </div>
+          </div>
+        </template>
+      </template>
+      <!--* Error caught-->
+      <template if:true={error}>
+        <div class="not_found_div">
+          <img src={errorImg} class="error-img slds-var-m-bottom_small" />
+          <p class="error-message error-text">{error.message}</p>
+        </div>
+      </template>
+    </div>
+  </div>
+</template>

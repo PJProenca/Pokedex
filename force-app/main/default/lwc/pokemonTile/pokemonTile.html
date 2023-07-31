@@ -1,0 +1,40 @@
+<template>
+  <div class={getColorByGeneration}>
+    <span class="slds-var-m-around_xx-small"
+      ><p class="slds-var-m-bottom_xx-small slds-text-align_center">
+        <strong>Pokémon Nº </strong>{pokemon.PokeIndex__c}
+      </p></span
+    >
+    <div class="slds-grid slds-align_absolute-center">
+      <div>
+        <img src={pokemon.Foto_URL__c} onclick={handleOpenRecordOnClick} />
+      </div>
+    </div>
+    <div class="slds-p-left_small">
+      <p class="slds-var-m-bottom_xx-small">
+        <strong>Nombre: </strong>{pokemon.Name}
+      </p>
+      <p class="slds-var-m-bottom_xx-small">
+        <strong>Generación: </strong>{pokemon.Geracao__c}
+      </p>
+      <p class="slds-var-m-bottom_xx-small">
+        <strong>Altura: </strong>{pokemon.Altura__c}
+      </p>
+      <p class="slds-var-m-bottom_xx-small">
+        <strong>Peso: </strong>{pokemon.Peso__c}
+      </p>
+      <p class="slds-var-m-bottom_xx-small slds-text-align_center">
+        <strong>Tipo: </strong>
+      </p>
+      <template if:true={pokemon.Tipo__c}>
+        <template for:each={pokemon.tipo__c} for:item="tipo">
+          <div key={tipo.name} class="types_parent_div">
+            <div class={tipo.colorType}>
+              <p class="type_text">{tipo.name}</p>
+            </div>
+          </div>
+        </template>
+      </template>
+    </div>
+  </div>
+</template>

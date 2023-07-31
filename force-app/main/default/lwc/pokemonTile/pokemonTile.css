@@ -1,0 +1,188 @@
+p {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: small;
+}
+
+img {
+  height: fit-content;
+  width: fit-content;
+}
+
+.types_parent_div {
+  display: grid;
+  place-items: center;
+}
+/** classes for types colors **/
+.poke {
+  --type-color: #a1a177;
+  background-color: var(--type-color);
+  border-radius: 0.75rem;
+  margin-bottom: 5px;
+  width: 50%;
+  text-align: center;
+}
+
+.poke.Fire {
+  --type-color: #ee8130;
+}
+
+.poke.Water {
+  --type-color: #6390f0;
+}
+
+.poke.Electric {
+  --type-color: #f7d02c;
+}
+
+.poke.Normal {
+  --type-color: #a1a177;
+}
+
+.poke.Grass {
+  --type-color: #7ac74c;
+}
+
+.poke.Ice {
+  --type-color: #96d9d6;
+}
+
+.poke.Fighting {
+  --type-color: #c22e28;
+}
+
+.poke.Poison {
+  --type-color: #a33ea1;
+}
+
+.poke.Ground {
+  --type-color: #e2bf65;
+}
+
+.poke.Flying {
+  --type-color: #a98ff3;
+}
+
+.poke.Psychic {
+  --type-color: #f95587;
+}
+
+.poke.Bug {
+  --type-color: #a6b91a;
+}
+
+.poke.Rock {
+  --type-color: #b6a136;
+}
+
+.poke.Ghost {
+  --type-color: #735797;
+}
+
+.poke.Dragon {
+  --type-color: #6f35fc;
+}
+
+.poke.Dark {
+  background-color: #705746;
+}
+
+.poke.Steel {
+  --type-color: #b7b7ce;
+}
+
+.poke.Fairy {
+  --type-color: #d685ad;
+}
+
+/** Classes for cards colors **/
+
+.pokemon-gen-color {
+  --gen-color: white;
+  background: var(--gen-color);
+  padding: 0.125rem;
+  display: block;
+  height: 340px;
+  width: 200px;
+  border-radius: 0.35rem;
+  box-shadow: 5px 5px;
+  transition: transform 0.5s ease;
+  transition: box-shadow 0.01s ease;
+}
+.pokemon-gen-color.gen1 {
+  --gen-color: linear-gradient(
+    225deg,
+    rgba(236, 222, 64, 0.8) 1%,
+    rgba(113, 93, 27, 1) 57%,
+    rgba(203, 203, 192, 0.8) 100%
+  );
+}
+
+.pokemon-gen-color.gen2 {
+  --gen-color: linear-gradient(
+    225deg,
+    rgba(92, 92, 2, 1) 1%,
+    rgba(189, 126, 41, 0.8827906162464986) 57%,
+    rgba(124, 71, 0, 1) 100%
+  );
+}
+.pokemon-gen-color.gen3 {
+  --gen-color: linear-gradient(
+    225deg,
+    rgba(203, 203, 192, 1) 1%,
+    rgba(27, 78, 113, 1) 57%,
+    rgba(64, 221, 236, 1) 100%
+  );
+}
+.pokemon-gen-color.gen4 {
+  --gen-color: linear-gradient(
+    225deg,
+    rgba(255, 255, 165, 1) 1%,
+    rgba(117, 0, 0, 0.8827906162464986) 57%,
+    rgba(242, 102, 102, 0.4009978991596639) 100%
+  );
+}
+.pokemon-gen-color.gen5 {
+  --gen-color: linear-gradient(
+    225deg,
+    rgba(204, 204, 204, 1) 0%,
+    rgba(0, 107, 39, 1) 57%,
+    rgba(83, 102, 0, 0.4009978991596639) 100%
+  );
+}
+.pokemon-gen-color.gen6 {
+  --gen-color: linear-gradient(
+    225deg,
+    rgba(204, 204, 204, 1) 0%,
+    rgba(73, 0, 110, 0.8995973389355743) 57%,
+    rgba(240, 0, 247, 1) 100%
+  );
+}
+.pokemon-gen-color.gen7 {
+  --gen-color: linear-gradient(
+    225deg,
+    rgba(1, 63, 91, 0.7455357142857143) 0%,
+    rgba(219, 236, 235, 1) 57%,
+    rgba(1, 63, 91, 1) 100%
+  );
+}
+.pokemon-gen-color.gen8 {
+  --gen-color: linear-gradient(
+    225deg,
+    rgba(0, 0, 0, 0.7455357142857143) 0%,
+    rgba(219, 236, 235, 1) 57%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.pokemon-gen-color:hover {
+  transform: scale(1.05);
+  box-shadow: 8px 8px 3px;
+}
+img:hover {
+  cursor: pointer;
+}
+
+.type_text {
+  font-weight: bold;
+  opacity: 1;
+}

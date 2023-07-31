@@ -1,0 +1,35 @@
+<template>
+  <template if:true={exists}>
+    <div class="slds-container_medium stats_bg" style={getStatsBG}>
+      <div class="slds-var-p-vertical_large">
+        <div
+          class="slds-grid slds-align_absolute-center slds-var-m-bottom_small"
+        >
+          <img src={imgUrl} class="stat_img" alt="" />
+        </div>
+        <div class="slds-grid slds-align_absolute-center">
+          <template for:each={pokeMap} for:item="mapKey">
+            <div
+              key={mapKey.key}
+              class="slds-var-m-horizontal_x-small slds-text-align_center"
+            >
+              <p class="stat_text slds-var-m-bottom_x-small">{mapKey.key}</p>
+              <p class="stat_values">{mapKey.value}</p>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template if:false={exists}>
+    <div
+      class="slds-grid slds-align_absolute-center slds-grid_vertical-align-center"
+    >
+      <div
+        class="no-data-found slds-grid slds-align_absolute-center slds-grid_vertical-align-center"
+      >
+        <p>No Data Found</p>
+      </div>
+    </div>
+  </template>
+</template>
